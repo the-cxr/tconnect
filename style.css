@@ -1,37 +1,25 @@
-/*
- * TConnect - Estilos Globais e da Homepage (Atualizados)
- */
-
-/* ====================================================================== */
-/* === GLOBAIS: FONTES, VARIÁVEIS, E ESTILOS GERAIS === */
-/* ====================================================================== */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
 
 :root {
-    /* Paleta de Cores Principal (Corrigida) */
     --color-blue-dark: #0A2351;
-    --color-blue-medium: #1A4D8C; /* Corrigido para uma cor azul mais escura */
+    --color-blue-medium: #1A4D8C; 
     --color-white: #FFFFFF;
     --color-grey-light: #F8F8F8;
     --color-text-dark: #333333;
     --color-text-muted: #BBBBBB;
 
-    /* Cores de Destaque */
     --color-green-accent: #2ECC71;
     --color-green-accent-hover: #26b360;
     --color-blue-accent: #5B92E5;
     --color-blue-accent-hover: #4A7FD3;
     --color-whatsapp: #25D366;
 
-    /* Variáveis para Planos e Cards */
     --color-card-background: linear-gradient(to bottom, #1e40af, #172554);
     --color-card-foreground: #ffffff;
     --color-muted-foreground: rgba(255, 255, 255, 0.9);
 }
 
-/* Estilos Gerais */
 body {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     margin: 0;
@@ -84,7 +72,6 @@ h2 {
     background-color: var(--color-green-accent-hover);
     color: var(--color-text-dark);
 }
-/* Estilo para os botões da página de portabilidade */
 .btn-primary-port {
     background-color: var(--color-blue-accent);
     color: var(--color-white);
@@ -115,12 +102,6 @@ h2 {
     color: var(--color-blue-accent);
 }
 
-
-/* ====================================================================== */
-/* === CABEÇALHO, RODAPÉ e COMPONENTES FIXOS === */
-/* ====================================================================== */
-
-/* Cabeçalho e Navegação */
 .main-header {
     background-color: var(--color-blue-dark);
     color: var(--color-white);
@@ -131,13 +112,13 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%; /* Garante que o nav ocupe toda a largura do container */
+    width: 100%; 
     max-width: 1180px;
     margin: 0 auto;
     padding: 0 20px;
 }
 .logo {
-    margin-right: 20px; /* Adiciona um espaço fixo entre a logo e os links */
+    margin-right: 20px; 
 }
 .logo-img { height: 65px; width: auto; display: block; border-radius: 5px; }
 .nav-links {
@@ -152,9 +133,15 @@ h2 {
 .btn-login { background-color: var(--color-green-accent); color: var(--color-text-dark); padding: 8px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s ease, color 0.3s ease; white-space: nowrap; }
 .btn-login:hover { background-color: var(--color-green-accent-hover); }
 
-/* Rodapé Principal */
 .main-footer { background-color: var(--color-blue-dark); color: var(--color-white); padding: 40px 0; }
-.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    align-items: flex-start; 
+}
+
 .footer-col h4 { color: var(--color-white); font-size: 1.2em; margin-bottom: 20px; }
 .footer-col ul { list-style: none; padding: 0; margin: 0; }
 .footer-col ul li { margin-bottom: 10px; }
@@ -164,17 +151,10 @@ h2 {
 .social-icons img { width: 30px; height: 30px; transition: transform 0.3s ease; }
 .social-icons img:hover { transform: scale(1.1); }
 
-/* Botão Flutuante do WhatsApp */
 .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: var(--color-whatsapp); color: var(--color-white); border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px rgba(0,0,0,0.4); z-index: 1000; display: flex; justify-content: center; align-items: center; transition: transform 0.3s ease-in-out; }
 .whatsapp-float:hover { transform: scale(1.1); }
 .whatsapp-icon { width: 35px; height: 35px; }
 
-
-/* ====================================================================== */
-/* === SEÇÕES DA HOMEPAGE (REFORMULADAS) === */
-/* ====================================================================== */
-
-/* Hero Section (Carrossel de Banners) */
 .hero-section {
     background-color: var(--color-blue-dark);
     position: relative;
@@ -258,7 +238,6 @@ h2 {
     transform: scale(1.2);
 }
 
-/* Seção TConnect Móvel (Atualizada com a imagem do mapa) */
 .mobile-connect-section {
     background-color: var(--color-blue-dark);
     padding: 80px 20px;
@@ -290,7 +269,6 @@ h2 {
     text-align: left;
 }
 
-/* Estilos para o novo mapa na seção */
 .connect-map-container {
     flex: 1;
     display: flex;
@@ -307,7 +285,6 @@ h2 {
     transition: none;
 }
 
-/* Estilos para estados específicos */
 
 #state_sc .shape {
     fill: var(--color-green-accent) !important;
@@ -346,7 +323,6 @@ h2 {
     fill: var(--color-green-accent) !important;
 }
 
-/* Seção de Cobertura (Atualizada para fundo branco) */
 .coverage-section {
     background-color: var(--color-white);
     padding: 80px 20px;
@@ -393,7 +369,6 @@ h2 {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
-/* Altere esta parte nas media queries também */
 @media (max-width: 768px) {
     .coverage-flex-container {
         flex-direction: column-reverse;
@@ -410,7 +385,6 @@ h2 {
     }
 }
 
-/* Seção Sobre Nós (Reformulada) */
 .about-us-section {
     background-color: var(--color-blue-dark);
     padding: 80px 20px;
@@ -511,7 +485,6 @@ h2 {
     visibility: visible;
 }
 
-/* Seção Benefícios */
 .benefits-section {
     background-color: var(--color-grey-light);
     color: var(--color-text-dark);
@@ -557,7 +530,6 @@ h2 {
     color: var(--color-text-muted);
 }
 
-/* Seção de Contato */
 .contact-section {
     background-color: var(--color-blue-dark);
     padding: 80px 20px;
@@ -581,7 +553,7 @@ h2 {
 .contact-item .icon-circle {
     width: 70px;
     height: 70px;
-    background-color: var(--color-blue-medium); /* Cor de fundo do círculo */
+    background-color: var(--color-blue-medium); 
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -589,10 +561,9 @@ h2 {
     margin: 0 auto 20px auto;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 40px; /* Tamanho do ícone */
+    background-size: 40px;
 }
 
-/* Regras para cada ícone individualmente */
 .contact-item .phone-icon {
     background-image: url('assets/fonpor.png');
 }
@@ -621,7 +592,6 @@ h2 {
     display: none;
 }
 
-/* Estilos de Planos e Portabilidade (Mantidos) */
 .plans-section { background-color: var(--color-grey-light); padding-top: 60px; padding-bottom: 60px; margin: 0 auto; border-radius: 0; }
 .plans-section h2#plan-section-title { font-size: 2.5em; color: var(--color-text-dark); margin-bottom: 40px; font-weight: 700; }
 .plan-toggle-buttons { display: flex; justify-content: center; margin-bottom: 40px; gap: 15px; }
@@ -670,28 +640,33 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 10px; /* Reduzi o espaço no topo */
-    margin-bottom: 15px; /* Reduzi o espaço abaixo do cabeçalho */
+    padding-top: 10px; 
+    margin-bottom: 15px; 
+    text-align: center; 
 }
 
 .plano-nome {
-    font-size: 1.5rem;
+    font-size: 1.25rem; 
     font-weight: 700;
-    margin-bottom: 3px; /* Reduzi o espaço abaixo do nome */
+    margin-bottom: 3px;
     color: var(--color-white);
+
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .plan-header .ate {
     font-size: 0.875rem;
     font-weight: 500;
-    margin-bottom: 3px; /* Reduzi o espaço abaixo do "ATÉ" */
-    color: var(--color-green-accent);
+    margin-bottom: 3px; 
+    color: var(--color-white);
 }
 
 .plan-header .gb {
-    font-size: 3.2rem; /* Opcional: reduzi um pouco o tamanho do GB para compactar */
+    font-size: 3.2rem; 
     font-weight: bold;
-    margin-bottom: 10px; /* Reduzi o espaço abaixo do GB */
+    margin-bottom: 10px; 
     line-height: 1;
     color: var(--color-card-foreground);
 }
@@ -700,14 +675,14 @@ h2 {
     width: 100%;
     height: 1px;
     background-color: rgba(255, 255, 255, 0.3);
-    margin-bottom: 15px; /* Reduzi o espaço abaixo do divisor */
+    margin-bottom: 15px; 
 }
 
 .features {
     display: flex;
     flex-direction: column;
-    gap: 8px; /* Reduzi o espaço entre as linhas de features */
-    margin-bottom: 15px; /* Reduzi o espaço abaixo das features */
+    gap: 8px; 
+    margin-bottom: 15px;
 }
 
 .feature {
@@ -731,15 +706,14 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 16px;
-    margin-bottom: 20px; /* Reduzi o espaço abaixo dos ícones */
+    margin-bottom: 20px;
 }
 
 .price-section {
     text-align: center;
-    margin-top: auto; /* Opcional: Garante que o botão fique no final do card */
+    margin-top: auto; 
 }
 
-/* Regras para o botão */
 .price-button {
     background-color: var(--color-green-accent);
     color: var(--color-white);
@@ -772,8 +746,8 @@ h2 {
 .hero-portabilidade { background-color: var(--color-blue-dark); padding: 100px 0; color: var(--color-white); }
 
 .hero-portabilidade .hero-content {
-    display: flex; /* Transforma o contêiner em um Flexbox */
-    align-items: center; /* Alinha os itens (texto e imagem) verticalmente ao centro */
+    display: flex; 
+    align-items: center; 
     justify-content: space-between;
     gap: 40px;
 }
@@ -851,10 +825,17 @@ h2 {
 .final-cta h2 { font-size: 2em; font-weight: 700; margin-bottom: 10px; }
 .final-cta p { font-size: 1.1em; color: var(--color-text-muted); margin-bottom: 30px; }
 
+.final-message-section {
+    background-color: var(--color-blue-dark);
+    padding: 30px 20px;
+    text-align: center;
+    color: var(--color-white);
+}
 
-/* ====================================================================== */
-/* === MEDIA QUERIES (Responsividade) === */
-/* ====================================================================== */
+.final-message-section p {
+    margin: 0;
+    font-size: 1.1em;
+}
 
 @media (max-width: 1024px) {
     .main-nav { flex-wrap: wrap; justify-content: center; }
@@ -874,7 +855,15 @@ h2 {
     .hero-section { height: 350px; }
     .banner-text-overlay h1 { font-size: 3em; letter-spacing: 5px; }
     .banner-text-overlay p { font-size: 1.1em; }
-    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+
+    @media (max-width: 768px) {
+    .footer-grid {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
     .social-icons { justify-content: center; }
     .coverage-section h2 { font-size: 2em; }
     .about-us-section .about-flex { gap: 30px; }
@@ -891,8 +880,8 @@ h2 {
 .page-hero-title {
     background-color: var(--color-blue-dark);
     color: var(--color-white);
-    padding: 80px 20px; /* Adiciona espaçamento interno para cima e para baixo */
-    text-align: center; /* Centraliza todo o texto e conteúdo */
+    padding: 80px 20px;
+    text-align: center; 
 }
 
 .page-hero-title h1 {
@@ -905,4 +894,11 @@ h2 {
     font-size: 1.1em;
     max-width: 800px;
     margin: 0 auto;
+}
+
+.footer-logo-img {
+    height: 40px; 
+    width: auto;
+    display: block;
+    border-radius: 5px;
 }
