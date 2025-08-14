@@ -185,20 +185,7 @@ h2 {
     object-fit: cover;
     display: block;
 }
-.banner-text-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    text-align: center;
-    color: var(--color-white);
-    background-color: rgba(10, 35, 81, 0.7);
-    padding: 20px 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    backdrop-filter: blur(5px);
-}
+
 .banner-text-overlay h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 4.5em;
@@ -215,27 +202,6 @@ h2 {
 @keyframes fade {
     from { opacity: .4 }
     to { opacity: 1 }
-}
-.slider-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 15;
-}
-.slider-dots .dot {
-    width: 12px;
-    height: 12px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-.slider-dots .dot.active, .slider-dots .dot:hover {
-    background-color: var(--color-green-accent);
-    transform: scale(1.2);
 }
 
 .mobile-connect-section {
