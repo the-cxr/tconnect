@@ -13,22 +13,29 @@
 <body>
 
     <header class="main-header">
-        <nav class="main-nav">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="assets/tclogo.png" alt="Logo TConnect" class="logo-img">
-                </a>
+    <nav class="main-nav">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/tclogo.png" alt="Logo TConnect" class="logo-img">
+            </a>
+        </div>
+        <div class="mobile-nav-buttons">
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
-            <div class="nav-links">
-                <ul class="nav-list">
-                    <li><a href="index.html">Página Inicial</a></li>
-                    <li><a href="nossos-planos.html" class="active">Nossos Planos</a></li>
-                    <li><a href="portabilidade.html">Portabilidade</a></li>
-                </ul>
-                <a href="https://erp.tconnect.com.br/app_login/" class="btn-login" target="_blank" rel="noopener noreferrer">Seu Login</a>
-            </div>
-        </nav>
-    </header>
+        </div>
+        <div class="nav-links">
+            <ul class="nav-list">
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="nossos-planos.html">Nossos Planos</a></li>
+                <li><a href="portabilidade.html">Portabilidade</a></li>
+            </ul>
+            <a href="https://erp.tconnect.com.br/app_login/" class="btn-login" target="_blank" rel="noopener noreferrer">Seu Login</a>
+        </div>
+    </nav>
+</header>
 
     <main>
         <section class="page-hero-title">
@@ -721,3 +728,10 @@
 
 </body>
 </html>
+<script>
+  document.getElementById('mobile-menu').addEventListener('click', function() {
+      var navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
+      this.classList.toggle('active');
+  });
+</script>

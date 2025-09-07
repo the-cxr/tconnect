@@ -19,9 +19,16 @@
                 <img src="assets/tclogo.png" alt="Logo TConnect" class="logo-img">
             </a>
         </div>
+        <div class="mobile-nav-buttons">
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
         <div class="nav-links">
             <ul class="nav-list">
-                <li><a href="index.html" class="active">Página Inicial</a></li>
+                <li><a href="index.html">Página Inicial</a></li>
                 <li><a href="nossos-planos.html">Nossos Planos</a></li>
                 <li><a href="portabilidade.html">Portabilidade</a></li>
             </ul>
@@ -189,3 +196,10 @@
     </script>
 </body>
 </html>
+<script>
+  document.getElementById('mobile-menu').addEventListener('click', function() {
+      var navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
+      this.classList.toggle('active');
+  });
+</script>

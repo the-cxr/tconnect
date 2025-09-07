@@ -18,14 +18,18 @@
     --color-muted-foreground: rgba(255, 255, 255, 0.9);
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     background-color: var(--color-blue-dark);
     color: var(--color-white);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 .container {
     max-width: 1180px;
@@ -105,6 +109,10 @@ h2 {
     color: var(--color-white);
     padding: 1rem 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 .main-nav {
     display: flex;
@@ -165,7 +173,24 @@ h2 {
 .social-icons { display: flex; gap: 15px; margin-top: 15px; }
 .social-icons img { width: 30px; height: 30px; transition: transform 0.3s ease; }
 .social-icons img:hover { transform: scale(1.1); }
-.whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: var(--color-whatsapp); color: var(--color-white); border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px rgba(0,0,0,0.4); z-index: 1000; display: flex; justify-content: center; align-items: center; transition: transform 0.3s ease-in-out; }
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: var(--color-whatsapp);
+    color: var(--color-white);
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
 .whatsapp-float:hover { transform: scale(1.1); }
 .whatsapp-icon { width: 35px; height: 35px; }
 
@@ -176,12 +201,13 @@ h2 {
     height: 500px;
 }
 .carousel-container {
-    width: 97%;
+    width: 100%;
     height: 100%;
     position: relative;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 8px;
+    box-sizing: border-box;
 }
 .carousel-slide {
     display: none;
@@ -195,9 +221,27 @@ h2 {
 }
 .carousel-slide img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 100%;    
     display: block;
+    object-fit: cover;    
+}
+
+@media (max-width: 768px) {
+    #hero-section {
+        height: 500px;    
+    }
+    .carousel-slide img {
+        object-position: center 25%; 
+    }
+}
+
+@media (min-width: 769px) {
+    #hero-section {
+        height: 500px;
+    }
+    .carousel-slide img {
+        object-position: center center; 
+    }
 }
 .banner-text-overlay h1 {
     font-family: 'Montserrat', sans-serif;
@@ -220,6 +264,7 @@ h2 {
 .mobile-connect-section {
     background-color: var(--color-blue-dark);
     padding: 80px 20px;
+    box-sizing: border-box;
 }
 .mobile-connect-grid {
     display: flex;
@@ -263,6 +308,39 @@ h2 {
     transition: none;
 }
 
+.about-map-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    flex-direction: column; 
+}
+
+.box-mapa {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#map {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    min-width: unset;
+    display: block;
+    margin: 0 auto;
+}
+@media (max-width: 768px) {
+    #map {
+        transform: scale(0.8); 
+        transform-origin: center center;
+    }
+}
 #state_sc .shape, #state_rs .shape, #state_rj .shape, #state_pa .shape, #state_ba .shape, 
 #state_pr .shape, #state_sp .shape, #state_mg .shape, #state_ms .shape, #state_go .shape, 
 #state_es .shape, #state_rn .shape {
@@ -283,19 +361,6 @@ h2 {
 }
 #map .state:hover .label_icon_state, #map .state.active .label_icon_state {
     fill: var(--color-white);
-}
-.box-mapa {
-    max-width: 100%;
-    height: auto;
-    position: relative;
-    margin-bottom: 20px;
-}
-#map {
-    width: 100%;
-    height: auto;
-    display: block;
-    transform: scale(1);
-    margin: 0 auto;
 }
 .parca {
     position: relative;
@@ -332,6 +397,7 @@ h2 {
     background-color: var(--color-white);
     padding: 80px 20px;
     color: var(--color-text-dark);
+    box-sizing: border-box;
 }
 .coverage-flex-container {
     display: flex;
@@ -375,10 +441,10 @@ h2 {
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-/* About Us Section */
 .about-us-section {
     background-color: var(--color-blue-dark);
     padding: 80px 20px;
+    box-sizing: border-box;
 }
 .about-us-section .about-flex {
     display: flex;
@@ -419,8 +485,9 @@ h2 {
 
 .benefits-section {
     background-color: var(--color-grey-light);
-    color: var(--color-text-dark);
     padding: 80px 20px;
+    color: var(--color-text-dark);
+    box-sizing: border-box;
 }
 .benefits-section .section-title {
     color: var(--color-text-dark);
@@ -465,6 +532,7 @@ h2 {
 .contact-section {
     background-color: var(--color-blue-dark);
     padding: 80px 20px;
+    box-sizing: border-box;
 }
 .contact-section .section-title {
     color: var(--color-white);
@@ -609,80 +677,58 @@ h2 {
 
 @media (max-width: 1024px) {
     .main-nav {
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem 20px;
     }
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background-color: var(--color-blue-dark);
-        flex-direction: column;
-        align-items: center;
-        padding-bottom: 20px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-    }
-    .nav-links.active {
-        display: flex;
-    }
-    .nav-list {
-        flex-direction: column;
-        align-items: center;
-        gap: 0;
-    }
-    .nav-list li {
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .nav-list li:last-child {
-        border-bottom: none;
-    }
-    .nav-list a {
-        display: block;
-        width: 100%;
-        padding: 15px 0;
-    }
-    .btn-login {
-        display: block;
-        margin-top: 20px;
-        width: 80%;
-        text-align: center;
-    }
+    
     .menu-toggle {
         display: flex;
-        order: 2; 
+        z-index: 1001;
     }
-    .logo {
-        order: 1; 
-        margin-right: auto;
-    }
-    .btn-login {
-        order: 3; 
-        margin-right: 0;
-    }
-    .main-nav .nav-links {
-        justify-content: center;
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
         position: fixed;
-        left: 0;
         top: 0;
+        left: 0;
         z-index: 999;
         width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
         background-color: rgba(10, 35, 81, 0.95);
         transform: translateY(-100%);
         transition: transform 0.3s ease-in-out;
         padding-top: 100px;
     }
-    .main-nav .nav-links.active {
+
+    .nav-links.active {
+        display: flex;
         transform: translateY(0);
     }
-    .main-nav .nav-links a {
-        font-size: 1.5em;
+    
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-list li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-list a {
+        display: block;
         padding: 15px 0;
+        width: 100%;
+    }
+
+    .btn-login {
+        display: block;
+        margin-top: 20px;
+        width: 80%;
+        text-align: center;
     }
 
     .hero-section {
@@ -744,6 +790,16 @@ h2 {
         border-left: none;
         padding-left: 0;
     }
+    .about-us-section .about-map-content {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
 
     .benefits-grid, .contact-grid {
         grid-template-columns: 1fr;
@@ -785,79 +841,65 @@ h2 {
     }
 }
 
-@media (max-width: 768px) {
-    .main-nav {
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        padding: 1rem;
-    }
+@media (max-width: 480px) {
+    h2 { font-size: 2em; }
+    .section-subtitle { font-size: 1em; }
+    .btn-primary, .btn-secondary { padding: 10px 20px; }
+    .btn-primary-port { padding: 12px 25px; font-size: 0.9em; }
 
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--color-blue-dark);
-        flex-direction: column;
+    .main-header { padding: 0.8rem 0; }
+    .logo-img { height: 50px; }
+    .nav-list a, .btn-login { font-size: 1.2em; }
+
+    .hero-section { height: 250px; }
+    .mobile-connect-section .connect-text-content h2 { font-size: 2em; }
+    .coverage-text-content h2 { font-size: 1.5em; }
+    .about-us-section h2 { font-size: 2em; }
+    
+    .plan-toggle-buttons { flex-direction: column; gap: 10px; }
+    .toggle-btn { font-size: 1em; padding: 10px 20px; }
+    .plan-card { min-height: 420px; }
+    .plan-header .gb { font-size: 2.8rem; }
+    .price-button { font-size: 1.2rem; padding: 10px 30px; }
+
+    .hero-portabilidade h1 { font-size: 2em; }
+    .hero-portabilidade p { font-size: 1em; }
+    .faq-portabilidade .faq-question { font-size: 1em; }
+    
+    .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+    }
+    .about-map-content {
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
         align-items: center;
-        padding: 20px 0;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-        z-index: 1000;
-        transition: transform 0.3s ease-in-out;
+        overflow: hidden;
     }
-    .nav-links.active {
-        display: flex;
-        transform: translateY(0);
-    }
-
-    .nav-list {
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-list a, .btn-login {
-        display: block;
-        padding: 15px 0;
-        width: 80%;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .btn-login {
-        margin-top: 15px;
-    }
-
-    .menu-toggle {
-        display: flex;
-        order: 2; 
-    }
-    
-    .logo {
-        order: 1; 
-    }
-    
-    .btn-login-mobile {
-        display: block;
-        order: 3; 
-    }
-
-    .hero-section {
-        height: 300px;
-    }
-
-    .carousel-slide img {
-        object-fit: cover;
-    }
-    
-    .box-mapa {
-        width: 100%;
-        height: auto;
-    }
-
     #map {
-        width: 100%;
-        height: auto;
+        transform: scale(0.9); 
+        transform-origin: center center; 
+    }
+}
+@media (max-width: 768px) {
+    .about-map-content,
+    .texto-do-mapa {
+        display: none !important; 
+    }
+}
+.banner-desktop {
+    display: none;
+}
+.banner-mobile {
+    display: block;
+}
+
+@media (min-width: 769px) {
+    .banner-desktop {
+        display: block;
+    }
+    .banner-mobile {
+        display: none;
     }
 }
