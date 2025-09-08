@@ -219,28 +219,35 @@ h2 {
     animation-name: fade;
     animation-duration: 1.5s;
 }
+/* ===== AJUSTE FINAL DO BANNER (MÉTODO DE TESTE) ===== */
+
+/* Estilo Geral para a Imagem */
 .carousel-slide img {
     width: 100%;
-    height: 100%;    
+    height: 100%;
     display: block;
-    object-fit: cover;    
+    object-fit: cover;
 }
 
+/* NÍVEL 1: CELULARES (Até 768px) - JÁ ESTÁ BOM */
 @media (max-width: 768px) {
     #hero-section {
-        height: 500px;    
+        height: 480px; 
     }
     .carousel-slide img {
-        object-position: center 25%; 
+        object-position: center 30%; 
     }
 }
 
+/* NÍVEL 2: DESKTOP E NOTEBOOKS (Acima de 769px) - AQUI VAMOS AJUSTAR */
 @media (min-width: 769px) {
     #hero-section {
-        height: 500px;
+        /* Comece com este valor e vamos ajustar no navegador */
+        height: 380px; 
     }
     .carousel-slide img {
-        object-position: center center; 
+        /* Centraliza a imagem. 'cover' vai cortar o excesso igualmente. */
+        object-position: center center;
     }
 }
 .banner-text-overlay h1 {
@@ -730,10 +737,6 @@ h2 {
         width: 80%;
         text-align: center;
     }
-
-    .hero-section {
-        height: 300px;
-    }
     .carousel-slide img {
         object-fit: cover;
     }
@@ -851,7 +854,11 @@ h2 {
     .logo-img { height: 50px; }
     .nav-list a, .btn-login { font-size: 1.2em; }
 
-    .hero-section { height: 250px; }
+    @media (min-width: 769px) {
+  #hero-section {
+    height: 380px;
+  }
+}
     .mobile-connect-section .connect-text-content h2 { font-size: 2em; }
     .coverage-text-content h2 { font-size: 1.5em; }
     .about-us-section h2 { font-size: 2em; }
